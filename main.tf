@@ -1,20 +1,19 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
-      version = "3.59.0"
+      source  = "hashicorp/azurerm"
+      version = ">=3.0.0"
     }
   }
 }
 
+# Configure the Microsoft Azure Provider
 provider "azurerm" {
-  # Configuration options
-  features {
-    
-  }
+  features {}
 }
 
-resource "azurerm_resource_group" "mtc_rg" {
-  name     = "mtc-rg"
+# Create a resource group
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
   location = "West Europe"
 }
